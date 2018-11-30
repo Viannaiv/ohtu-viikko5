@@ -96,17 +96,15 @@ public class IntJoukko {
 
     @Override
     public String toString() {
-        switch (alkioidenLkm) {
-            case 0:
-                return "{}";
-            default:
-                String tuotos = "{";
-                for (int i = 0; i < alkioidenLkm - 1; i++) {
-                    tuotos += joukko[i] + ", ";
-                }
-                tuotos += joukko[alkioidenLkm - 1] + "}";
-                return tuotos;
+        if (alkioidenLkm == 0) {
+            return "{}";
         }
+        String tuotos = "{";
+        for (int i = 0; i < alkioidenLkm - 1; i++) {
+            tuotos += joukko[i] + ", ";
+        }
+        tuotos += joukko[alkioidenLkm - 1] + "}";
+        return tuotos;
     }
 
     public int[] toIntArray() {
